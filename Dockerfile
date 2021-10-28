@@ -1,4 +1,4 @@
-FROM ubuntu:20.10
+FROM nvidia/cuda:11.4.2-base-ubuntu20.04
 
 RUN apt-get update
 
@@ -15,7 +15,7 @@ ENV TZ=Asia/Kolkata
 # - ca-certificates allows git clone via https and also important for python version installs
 #   via pyenv
 # ---------------------------------------------------------------------------------------------------
-RUN apt-get install -y --no-install-recommends gcc g++ wget curl git make build-essential \ 
+RUN apt-get install -y --no-install-recommends gcc g++ wget curl git make build-essential \
     libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev llvm libncurses5-dev  \
     xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev ca-certificates
 # ---------------------------------------------------------------------------------------------------
